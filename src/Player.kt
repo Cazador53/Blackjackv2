@@ -16,7 +16,7 @@ class Player {
                 var Ace = when(readLine()!!.toInt()) {
 
                     1 -> result = 1
-                    1 -> result = 11
+                    11 -> result = 11
                     else -> println("Invalid input. Please enter 1 or 11.")
                 }
             }

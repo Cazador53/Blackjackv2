@@ -26,9 +26,18 @@ class BlackJackApp {
 
             // Takes user bet and subtracts from money
             var bet = readLine()!!.toInt()
-            money -= bet
 
-            println("You bet $bet dollars")
+            if(bet > money){
+                println("You don't have enough money to bet that amount")
+                println("Please enter a valid bet")
+                bet = readLine()!!.toInt()
+            }else if(bet <= money){
+                money -= bet
+
+                println("You bet $bet dollars")
+                println("New balance is $money dollars")
+            }
+
 
             // Card drawing and total calculation
             var pCard1 = player.PlayerDraw(1)
@@ -37,6 +46,14 @@ class BlackJackApp {
             var bCard2 = bot.BotDraw(1)
             var bTotal = bCard1 + bCard2
             var pTotal = pCard1 + pCard2
+
+            if(pTotal == 21){
+                println("You got blackjack")
+                break
+            }else if(bTotal == 21){
+                println("Dealer got blackjack")
+                break
+            }
 
             println("\nYou drew a $pCard1 and a $pCard2")
             println("The dealer drew a $bCard1 and a hidden card")
@@ -47,7 +64,7 @@ class BlackJackApp {
                 println("Your total is $pTotal")
 
                 // Player can "Double Down", doubling their bet and drawing one more card
-                if (money - (bet * 2) >= 0) {
+                if ((money - (bet * 2) >= 0) and (pTemp == 0)) {
 
                     println("Would you like to double down? Yes - 1 or No - 2")
                     var doubleDown = readLine()!!.toInt()
@@ -58,6 +75,11 @@ class BlackJackApp {
                         bet *= 2
 
                         pTemp = player.PlayerDraw(1)
+                        pTotal += pTemp
+
+                        println("You drew a $pTemp")
+                        println("Your new total is $pTotal")
+
                         break
                     }
                 }
