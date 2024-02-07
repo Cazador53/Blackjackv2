@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f20e993d-7819-4e53-89d1-037a9d6db71a" name="Changes" comment="First go" />
+    <list default="true" id="f20e993d-7819-4e53-89d1-037a9d6db71a" name="Changes" comment="Revert &quot;First go&quot;&#10;&#10;This reverts commit 0b57d443">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blackjack.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bot.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.kt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +34,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -35,17 +54,32 @@
     &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Reverting in main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Blackjack" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Blackjack" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -64,7 +98,16 @@
       <workItem from="1707270439902" duration="118000" />
       <workItem from="1707270559525" duration="4000" />
       <workItem from="1707270567422" duration="2813000" />
-      <workItem from="1707273388880" duration="3036000" />
+      <workItem from="1707273388880" duration="3143000" />
+      <workItem from="1707276535890" duration="19000" />
+      <workItem from="1707276556919" duration="210000" />
+      <workItem from="1707276849129" duration="17000" />
+      <workItem from="1707276868466" duration="52000" />
+      <workItem from="1707276925542" duration="6000" />
+      <workItem from="1707276933634" duration="29000" />
+      <workItem from="1707277038453" duration="32000" />
+      <workItem from="1707277072287" duration="30000" />
+      <workItem from="1707277103966" duration="20000" />
     </task>
     <task id="LOCAL-00001" summary="First go">
       <option name="closed" value="true" />
@@ -90,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707276323849</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="First go">
+      <option name="closed" value="true" />
+      <created>1707276481728</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707276481728</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +172,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First go" />
-    <option name="LAST_COMMIT_MESSAGE" value="First go" />
+    <MESSAGE value="Revert &quot;First go&quot;&#10;&#10;This reverts commit 0b57d443" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;First go&quot;&#10;&#10;This reverts commit 0b57d443" />
   </component>
 </project>
