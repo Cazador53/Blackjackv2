@@ -112,6 +112,9 @@ class BlackJackApp {
             } else if ((pTotal < bTotal) and (bTotal < 21)) {
                 println("You lose -$bet dollars")
             }
+
+            // Asks user if they would like to play again
+            println("Would you like to play again? Yes - 1 or No - 2")
         }
     }
 }
