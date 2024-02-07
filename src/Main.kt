@@ -114,7 +114,18 @@ class BlackJackApp {
             }
 
             // Asks user if they would like to play again
-            println("Would you like to play again? Yes - 1 or No - 2")
+            println("Would you like to play again? Yes - 1 or No - -1")
+            restart = readLine()!!.toInt()
+
+            if((restart == 1) and (money <= 0)){
+                println("You are out of money. Game over.")
+                restart = -1
+            }else if((restart == 1) and (money > 0)){
+
+            }else {
+                println("You ended with $money dollars")
+                println("Thanks for playing!")
+            }
         }
     }
 }
