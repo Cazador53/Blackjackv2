@@ -7,12 +7,17 @@ fun main() {
 class BlackJackApp {
 
     fun run() {
+        // Allows taking from Player and Bot class
         val bot = Bot()
         val player = Player()
+        val winconditions = WinConditions()
+
         var money = 1000
         var restart = 0
         var hit = 0
         var pTemp = 0
+        var sTemp1 = 0
+        var sTemp2 = 0
 
         println("WELCOME TO BLACKJACK")
         println("\nPress enter to start the game")
@@ -27,6 +32,7 @@ class BlackJackApp {
             // Takes user bet and subtracts from money
             var bet = readLine()!!.toInt()
 
+            // Checks if user has enough money to bet
             if(bet > money){
                 println("You don't have enough money to bet that amount")
                 println("Please enter a valid bet")
@@ -40,13 +46,14 @@ class BlackJackApp {
 
 
             // Card drawing and total calculation
-            var pCard1 = player.PlayerDraw(1)
-            var pCard2 = player.PlayerDraw(1)
-            var bCard1 = bot.BotDraw(1)
-            var bCard2 = bot.BotDraw(1)
+            val pCard1 = player.PlayerDraw(1)
+            val pCard2 = player.PlayerDraw(1)
+            val bCard1 = bot.BotDraw(1)
+            val bCard2 = bot.BotDraw(1)
             var bTotal = bCard1 + bCard2
             var pTotal = pCard1 + pCard2
 
+            // Checks for blackjack and ends the game if either player has it
             if(pTotal == 21){
                 println("You got blackjack")
                 break
@@ -63,11 +70,27 @@ class BlackJackApp {
 
                 println("Your total is $pTotal")
 
-                // Player can "Double Down", doubling their bet and drawing one more card
+                // Allows players to split if they have two of the same card
+                if(pCard1 == pCard2){
+
+                    println("You have two of the same card, would you like to split? Yes - 1 or No - 2")
+                    val split = readLine()!!.toInt()
+
+                    if(split == 1){
+                        println("You have split your hand. You will now play two hands.")
+                        println("Your first hand is $pCard1 -- Your second hand is $pCard2")
+                        println("each hand is worth $bet dollars")
+
+
+
+                    }
+                }
+
+                // Player can "Double Down", doubling their bet and drawing one more card only if they have not hit yet and have enough money
                 if ((money - (bet * 2) >= 0) and (pTemp == 0)) {
 
                     println("Would you like to double down? Yes - 1 or No - 2")
-                    var doubleDown = readLine()!!.toInt()
+                    val doubleDown = readLine()!!.toInt()
 
                     if (doubleDown == 1) {
 
@@ -87,12 +110,13 @@ class BlackJackApp {
 
                 hit = readLine()!!.toInt()
 
+                // Player draws a card
                 if (hit == 1) {
                     pTemp = player.PlayerDraw(1)
                     pTotal += pTemp
                     println("You drew a $pTemp")
 
-                    // break loop when user stands
+                // break loop when user stands
                 } else if (hit == 2) {
                     println("You stood")
                     break
@@ -108,37 +132,22 @@ class BlackJackApp {
             // Dealer hits until 17 or more
             while (bTotal < 17) {
 
-                var bTemp = bot.BotDraw(1)
+                val bTemp = bot.BotDraw(1)
                 bTotal += bTemp
 
                 println("The dealer drew a $bTemp")
                 println("Dealer new total is $bTotal")
             }
+
+            // Determines the winner and adds or subtracts the bet from the money
             println("Your total is $pTotal -- Dealer total is $bTotal")
-            if ((pTotal > 21) and (bTotal <= 21)) {
-                println("You busted -$bet dollars")
-            } else if ((bTotal > 21) and (pTotal <= 21)) {
-                println("Dealer busted +$bet dollars")
-                money += bet * 2
-            } else if ((pTotal == bTotal) or (pTotal == bTotal)) {
-                println("Push +0 dollars")
-                money += bet
-            } else if ((pTotal == 21) and (bTotal < 21)) {
-                println("Blackjack +$bet dollars")
-                money += bet * 2
-            } else if ((pTotal < 21) and (bTotal == 21)) {
-                println("Dealer Blackjack -$bet dollars")
-            } else if ((pTotal > bTotal) and (pTotal < 21)) {
-                println("You win +$bet dollars")
-                money += bet * 2
-            } else if ((pTotal < bTotal) and (bTotal < 21)) {
-                println("You lose -$bet dollars")
-            }
+            
 
             // Asks user if they would like to play again
             println("Would you like to play again? Yes - 1 or No - -1")
             restart = readLine()!!.toInt()
 
+            // Does not allow user to play again if they are out of money
             if((restart == 1) and (money <= 0)){
                 println("You are out of money. Game over.")
                 restart = -1
