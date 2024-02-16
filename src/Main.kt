@@ -1,5 +1,3 @@
-import kotlin.random.Random
-
 fun main() {
     val app = BlackJackApp()
     app.run()
@@ -53,20 +51,23 @@ class BlackJackApp {
             var bTotal = bCard1 + bCard2
             var pTotal = pCard1 + pCard2
 
-            // Checks for blackjack and ends the game if either player has it
-            if(pTotal == 21){
-                println("You got blackjack")
-                break
-            }else if(bTotal == 21){
-                println("Dealer got blackjack")
-                break
-            }
+
+
 
             println("\nYou drew a $pCard1 and a $pCard2")
             println("The dealer drew a $bCard1 and a hidden card")
 
             // Allows players to keep hitting until they stand or bust
             while (pTotal < 21) {
+
+                // Checks for blackjack and ends the game if either player has it
+                if(pTotal == 21){
+                    println("You got blackjack")
+                    break
+                }else if(bTotal == 21){
+                    println("Dealer got blackjack")
+                    break
+                }
 
                 println("Your total is $pTotal")
 
@@ -141,7 +142,12 @@ class BlackJackApp {
 
             // Determines the winner and adds or subtracts the bet from the money
             println("Your total is $pTotal -- Dealer total is $bTotal")
-            
+            winconditions.checkWin(pTotal, bTotal, bet)
+            if(winconditions.win == 1) {
+                money += bet * 2
+            } else if (winconditions.win == 2) {
+                money -= bet
+            }
 
             // Asks user if they would like to play again
             println("Would you like to play again? Yes - 1 or No - -1")
