@@ -5,17 +5,19 @@ fun main() {
 class BlackJackApp {
 
     fun run() {
-        // Allows taking from Player and Bot class
+        // Allows taking from other classes
         val bot = Bot()
         val player = Player()
         val winconditions = WinConditions()
+        val split = Split()
 
         var money = 1000
         var restart = 0
         var hit = 0
         var pTemp = 0
-        var sTemp1 = 0
-        var sTemp2 = 0
+        var sHand1 = 0
+        var sHand2 = 0
+        var pSplit = 0
 
         println("WELCOME TO BLACKJACK")
         println("\nPress enter to start the game")
@@ -75,20 +77,22 @@ class BlackJackApp {
                 if(pCard1 == pCard2){
 
                     println("You have two of the same card, would you like to split? Yes - 1 or No - 2")
-                    val split = readLine()!!.toInt()
+                    pSplit = readLine()!!.toInt()
 
-                    if(split == 1){
-                        println("You have split your hand. You will now play two hands.")
-                        println("Your first hand is $pCard1 -- Your second hand is $pCard2")
-                        println("each hand is worth $bet dollars")
+                    if(pSplit == 1){
+                        sHand1 = pCard1
+                        sHand2 = pCard2
+
+                        split.split(sHand1,sHand2)
 
 
 
-                    }
-                }
+                    }else {}
+
+                }else {}
 
                 // Player can "Double Down", doubling their bet and drawing one more card only if they have not hit yet and have enough money
-                if ((money - (bet * 2) >= 0) and (pTemp == 0)) {
+                if ((money - (bet * 2) >= 0) and (pTemp == 0) and (pSplit == 0)) {
 
                     println("Would you like to double down? Yes - 1 or No - 2")
                     val doubleDown = readLine()!!.toInt()
@@ -142,7 +146,13 @@ class BlackJackApp {
 
             // Determines the winner and adds or subtracts the bet from the money
             println("Your total is $pTotal -- Dealer total is $bTotal")
+
+            if(pSplit == 1){
+
+            }
+
             winconditions.checkWin(pTotal, bTotal, bet)
+
             if(winconditions.win == 1) {
                 money += bet * 2
             } else if (winconditions.win == 2) {
