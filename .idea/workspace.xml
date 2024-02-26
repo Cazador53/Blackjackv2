@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f20e993d-7819-4e53-89d1-037a9d6db71a" name="Changes" comment="Revert &quot;First go&quot;&#10;&#10;This reverts commit 0b57d443">
-      <change afterPath="$PROJECT_DIR$/src/Split.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Split.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Split.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +87,7 @@
       <workItem from="1707277072287" duration="30000" />
       <workItem from="1707277103966" duration="20000" />
       <workItem from="1707315816103" duration="63000" />
-      <workItem from="1707315890999" duration="21673000" />
+      <workItem from="1707315890999" duration="27022000" />
     </task>
     <task id="LOCAL-00001" summary="First go">
       <option name="closed" value="true" />

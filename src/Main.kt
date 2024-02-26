@@ -83,7 +83,7 @@ class BlackJackApp {
                         sHand1 = pCard1
                         sHand2 = pCard2
 
-                        split.split(sHand1,sHand2)
+                        split.split(sHand1, sHand2)
 
 
 
@@ -151,12 +151,21 @@ class BlackJackApp {
 
             }
 
-            winconditions.checkWin(pTotal, bTotal, bet)
+            if(pSplit == 1) {
 
-            if(winconditions.win == 1) {
-                money += bet * 2
-            } else if (winconditions.win == 2) {
-                money -= bet
+                split.splitWin(sHand1, sHand2, bTotal)
+
+
+            }else {
+
+                winconditions.checkWin(pTotal, bTotal, bet)
+
+                if (winconditions.win == 1) {
+                    money += bet * 2
+                } else if (winconditions.win == 2) {
+                    money -= bet
+                }
+
             }
 
             // Asks user if they would like to play again
